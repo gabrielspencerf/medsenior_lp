@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './ui/Button';
 import { ArrowRight, ShieldCheck, Star, Info, Clock } from 'lucide-react';
-import { LocationData } from '../src/types';
+import { LocationData } from '../types';
 
 interface HeroProps {
   locationData: LocationData;

@@ -8,7 +8,7 @@ export const locations: Record<string, LocationData> = {
         hero: {
             title: "MedSênior",
             subtitle: "44+",
-            image: "https://d335luupugsy2.cloudfront.net/cms/files/84239/1726243864/$nnggaek2967",
+            image: "/images/hero/curitiba_medsenior.webp",
             badge: "Unidade Própria",
             differential: {
                 title: "Diferencial Curitiba",
@@ -95,7 +95,7 @@ export const locations: Record<string, LocationData> = {
         hero: {
             title: "MedSênior",
             subtitle: "44+",
-            image: "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/sp-hero.jpg",
+            image: "/images/hero/sao_paulo_medsenior.webp",
             badge: "Rede Credenciada Premium",
             differential: {
                 title: "Diferencial SP",
@@ -183,7 +183,7 @@ export const locations: Record<string, LocationData> = {
         hero: {
             title: "MedSênior",
             subtitle: "44+",
-            image: "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/bh-hero.jpg",
+            image: "/images/hero/belo_horizonte_medsenior.webp",
             badge: "Estrutura Completa",
             differential: {
                 title: "Diferencial BH",
@@ -268,7 +268,7 @@ export const locations: Record<string, LocationData> = {
         hero: {
             title: "MedSênior",
             subtitle: "44+",
-            image: "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/bsb-hero.jpg",
+            image: "/images/hero/brasilia_medsenior.webp",
             badge: "Especialidades Próprias",
             differential: {
                 title: "Diferencial DF",
@@ -352,7 +352,7 @@ export const locations: Record<string, LocationData> = {
         hero: {
             title: "MedSênior",
             subtitle: "44+",
-            image: "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/vix-hero.jpg",
+            image: "/images/hero/vitoria_medsenior.webp",
             badge: "Sede MedSênior",
             differential: {
                 title: "Diferencial ES",
@@ -429,7 +429,7 @@ export const locations: Record<string, LocationData> = {
         hero: {
             title: "MedSênior",
             subtitle: "44+",
-            image: "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/rj-hero.jpg",
+            image: "/images/hero/rio_de_janeiro_medsenior.webp",
             badge: "Expansão RJ",
             differential: {
                 title: "Diferencial RJ",
@@ -515,7 +515,7 @@ export const locations: Record<string, LocationData> = {
         hero: {
             title: "MedSênior",
             subtitle: "44+",
-            image: "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/poa-hero.jpg",
+            image: "/images/hero/porto_alegre_medsenior.webp",
             badge: "Tradição e Inovação",
             differential: {
                 title: "Diferencial RS",
@@ -600,7 +600,7 @@ export const locations: Record<string, LocationData> = {
         hero: {
             title: "MedSênior",
             subtitle: "44+",
-            image: "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/rec-hero.jpg",
+            image: "/images/hero/recife_medsenior.webp",
             badge: "Inovação no Nordeste",
             differential: {
                 title: "Diferencial PE",
@@ -676,7 +676,7 @@ export const locations: Record<string, LocationData> = {
         hero: {
             title: "MedSênior",
             subtitle: "44+",
-            image: "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/vcp-hero.jpg",
+            image: "/images/hero/campinas_medsenior.webp",
             badge: "Cuidado Integral",
             differential: {
                 title: "Diferencial Campinas",

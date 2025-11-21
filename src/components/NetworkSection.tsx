@@ -1,6 +1,6 @@
 import React from 'react';
 import { Building, Stethoscope, Microscope, MapPin } from 'lucide-react';
-import { LocationData } from '../src/types';
+import { LocationData } from '../types';
 
 interface NetworkProps {
     locationData: LocationData;

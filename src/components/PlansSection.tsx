@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './ui/Button';
 import { MapPin } from 'lucide-react';
-import { LocationData } from '../src/types';
+import { LocationData } from '../types';
 
 interface PlansProps {
   locationData: LocationData;
@@ -26,7 +26,10 @@ export const PlansSection: React.FC<PlansProps> = ({ locationData, onCtaClick })
         </div>
 
         {locationData.plans.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch ${locationData.plans.length === 3
+            ? 'lg:grid-cols-3 lg:max-w-5xl mx-auto'
+            : 'lg:grid-cols-4'
+            }`}>
             {locationData.plans.map((plan) => (
               <div
                 key={plan.id}

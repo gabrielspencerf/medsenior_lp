@@ -10,7 +10,26 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0',
       open: true,
     },
-    plugins: [react()],
+    plugins: [
+      react()
+    ],
+    build: {
+      // Enable minification
+      minify: 'esbuild', // Changed to esbuild for better compatibility
+      // Code splitting for better caching
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor': ['react', 'react-dom'],
+            'icons': ['lucide-react'],
+          },
+        },
+      },
+      // Report compressed size
+      reportCompressedSize: true,
+      // Chunk size warning limit
+      chunkSizeWarningLimit: 1000,
+    },
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
