@@ -47,18 +47,62 @@
         font-family: 'Manrope', sans-serif;
         -webkit-font-smoothing: antialiased;
       }
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Planos de Saúde MedSênior - Central de Vendas Autorizada. Tabela exclusiva para 44+ sem coparticipação.">
+    <title>BrasCare - MedSênior Concessionária Autorizada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                dark: '#004334', // MedSênior Dark Green
+                primary: '#008d5e', // MedSênior Mid Green
+                accent: '#a4cd39', // MedSênior Lime/Leaf Color
+                light: '#f3fce2', // Very light lime for backgrounds
+                gray: '#4a5568'
+              }
+            },
+            animation: {
+              'shine': 'shine 4s linear infinite',
+              'bounce-slow': 'bounce 3s infinite',
+            },
+            keyframes: {
+              shine: {
+                '0%': { backgroundPosition: '200% center' },
+                '100%': { backgroundPosition: '-200% center' },
+              }
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Manrope', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
       .glass-panel {
         background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
       }
     </style>
-    <!-- Typebot Library -->
-    <script type="module">
-      import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.22/dist/web.js'
-      window.Typebot = Typebot;
-    </script>
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
@@ -68,8 +112,14 @@
   }
 }
 </script>
+    <!-- Typebot Library -->
+    <script type="module">
+      import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.22/dist/web.js'
+      window.Typebot = Typebot;
+    </script>
 </head>
   <body class="bg-white text-gray-900 selection:bg-brand-accent selection:text-brand-dark">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

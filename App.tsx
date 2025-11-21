@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { PlansSection } from './components/PlansSection';
@@ -7,12 +7,12 @@ import { BenefitsSection } from './components/BenefitsSection';
 import { FAQSection } from './components/FAQSection';
 import { NetworkSection } from './components/NetworkSection';
 import { Footer } from './components/Footer';
-
-// Configuração da Praça/Cidade atual
-const CURRENT_CITY = "Curitiba";
+import { locations } from './src/data/locations';
 
 function App() {
-  
+  const [currentCity, setCurrentCity] = useState("Curitiba");
+  const locationData = locations[currentCity] || locations["Curitiba"];
+
   useEffect(() => {
     // Inicialização do Typebot
     const initTypebot = () => {
@@ -51,11 +51,15 @@ function App() {
     <div className="min-h-screen flex flex-col w-full overflow-x-hidden bg-white">
       <Header />
       <main className="flex-grow">
-        <Hero city={CURRENT_CITY} onCtaClick={handleOpenChat} />
-        <NetworkSection city={CURRENT_CITY} />
-        <PlansSection onCtaClick={handleOpenChat} />
+        <Hero locationData={locationData} onCtaClick={handleOpenChat} />
+        <NetworkSection locationData={locationData} />
+        <PlansSection locationData={locationData} onCtaClick={handleOpenChat} />
         <BenefitsSection onCtaClick={handleOpenChat} />
-        <LocationsGrid currentCity={CURRENT_CITY} />
+        <LocationsGrid
+          currentCity={currentCity}
+          onCitySelect={setCurrentCity}
+          availableCities={Object.keys(locations)}
+        />
         <FAQSection onCtaClick={handleOpenChat} />
       </main>
       <Footer />
