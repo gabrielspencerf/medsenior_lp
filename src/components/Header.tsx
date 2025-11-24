@@ -1,23 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Award } from 'lucide-react';
 
 const BRASCARE_LOGO = "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/10/brascare-logotipo-horizontal.png";
 const MEDSENIOR_LOGO = "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/Logotipo.png";
 
 export const Header: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <header
-      className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 border-b ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-gray-100 py-1.5' : 'bg-white border-transparent py-2'
-        }`}
-    >
+    <header className="bg-white border-b border-gray-100 py-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-row justify-between items-center gap-2">
 

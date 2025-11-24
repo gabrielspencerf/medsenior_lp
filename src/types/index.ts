@@ -25,11 +25,13 @@ export interface NetworkCategory {
 export interface LocationData {
     name: string;
     slug: string;
+    typebotId?: string;
     hero: {
         title: string;
         subtitle: string;
         image: string;
         badge?: string;
+        description?: string;
         differential?: {
             title: string;
             text: string;
@@ -37,4 +39,5 @@ export interface LocationData {
     };
     plans: Plan[];
     network: NetworkCategory[];
+    ansCode?: string;
 }

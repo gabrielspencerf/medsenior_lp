@@ -2,25 +2,34 @@ import React, { useEffect, useState, Suspense } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Footer } from './components/Footer';
+import { GoogleTagManager } from './components/GoogleTagManager';
 import { locations } from './data/locations';
 
 // Lazy load non-critical sections for performance
 const PlansSection = React.lazy(() => import('./components/PlansSection').then(module => ({ default: module.PlansSection })));
 const LocationsGrid = React.lazy(() => import('./components/LocationsGrid').then(module => ({ default: module.LocationsGrid })));
 const BenefitsSection = React.lazy(() => import('./components/BenefitsSection').then(module => ({ default: module.BenefitsSection })));
-const FAQSection = React.lazy(() => import('./components/FAQSection').then(module => ({ default: module.FAQSection })));
 const NetworkSection = React.lazy(() => import('./components/NetworkSection').then(module => ({ default: module.NetworkSection })));
 
+// Read environment variables
+const ENV_LOCATION = import.meta.env.VITE_LOCATION || '';
+const ENV_GTM_ID = import.meta.env.VITE_GTM_ID || '';
+const ENV_TYPEBOT_ID = import.meta.env.VITE_TYPEBOT_ID || 'medseniorteste';
+
 function App() {
-  const [currentCity, setCurrentCity] = useState("Curitiba");
+  // If VITE_LOCATION is set, lock to that location, otherwise default to Curitiba
+  const [currentCity, setCurrentCity] = useState(ENV_LOCATION || "Curitiba");
   const locationData = locations[currentCity] || locations["Curitiba"];
 
+  // Determine if location switching is allowed
+  const isLocationLocked = Boolean(ENV_LOCATION);
+
   useEffect(() => {
-    // Inicialização do Typebot
+    // Inicialização do Typebot com ID do ambiente
     const initTypebot = () => {
       if ((window as any).Typebot) {
         (window as any).Typebot.initBubble({
-          typebot: "medseniorteste",
+          typebot: ENV_TYPEBOT_ID,
           apiHost: "https://flow.creativelane.com.br",
           theme: {
             button: {
@@ -47,8 +56,18 @@ function App() {
     }
   };
 
+  const handleCitySelect = (city: string) => {
+    // Only allow city selection if location is not locked
+    if (!isLocationLocked) {
+      setCurrentCity(city);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Google Tag Manager */}
+      {ENV_GTM_ID && <GoogleTagManager gtmId={ENV_GTM_ID} />}
+
       <Header />
       <main>
         <Hero locationData={locationData} onCtaClick={handleOpenChat} />
@@ -59,13 +78,14 @@ function App() {
           <BenefitsSection onCtaClick={handleOpenChat} />
           <LocationsGrid
             currentCity={currentCity}
-            onCitySelect={setCurrentCity}
+            onCitySelect={handleCitySelect}
             availableCities={Object.keys(locations)}
+            isLocked={isLocationLocked}
           />
-          <FAQSection onCtaClick={handleOpenChat} />
+
         </Suspense>
       </main>
-      <Footer />
+      <Footer ansCode={locationData.ansCode} />
     </div>
   );
 }
