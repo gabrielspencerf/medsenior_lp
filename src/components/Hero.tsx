@@ -2,6 +2,26 @@ import React from 'react';
 import { Button } from './ui/Button';
 import { ArrowRight, ShieldCheck, Star, Info, Clock } from 'lucide-react';
 import { LocationData } from '../types';
+
+interface HeroProps {
+  locationData: LocationData;
+  onCtaClick: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ locationData, onCtaClick }) => {
+  return (
+    <section id="home" className="relative bg-white min-h-[85vh] flex items-center pt-4 pb-12 lg:pt-12 overflow-hidden">
+      {/* Navigation anchors */}
+      <span id="medsenior" className="absolute top-0 left-0 opacity-0 pointer-events-none"></span>
+      <span id="planos" className="absolute top-0 left-0 opacity-0 pointer-events-none"></span>
+
+      {/* Organic shapes background */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-[#f2f9f1] rounded-bl-[10rem] -z-0 pointer-events-none hidden lg:block"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+
+        {/* Content */}
+        <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light border border-brand-primary/20 self-center lg:self-start mx-auto lg:mx-0">
             <span className="flex h-2 w-2 rounded-full bg-brand-primary animate-pulse"></span>
             <span className="text-brand-dark text-xs font-bold tracking-wide uppercase">Central de Vendas {locationData.name}</span>
@@ -16,7 +36,7 @@ import { LocationData } from '../types';
             __html: locationData.hero.description || `Aproveite a tabela exclusiva para <strong>novas contratações</strong> em ${locationData.name}. Conte com Hospital Próprio, Pronto-Atendimento 24h e carência zero*.`
           }} />
 
-{/* Explicit Sales Disclaimer Box */ }
+          {/* Explicit Sales Disclaimer Box */}
           <div className="bg-red-50 border-l-4 border-red-400 p-3 text-left text-sm text-gray-700 rounded-r-lg max-w-lg mx-auto lg:mx-0 shadow-sm">
             <div className="flex items-start gap-3">
               <Info className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
@@ -47,49 +67,49 @@ import { LocationData } from '../types';
               <span>Especialista 44+</span>
             </div>
           </div>
-        </div >
+        </div>
 
-  {/* Image Composition - Building Facade */ }
-  < div className = "relative order-1 lg:order-2 flex flex-col items-center justify-center mt-2 lg:mt-0" >
-    <div className="relative w-full max-w-md lg:max-w-2xl">
-      {/* Main Image Container - Aspect Video for wider images */}
-      <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-white bg-gray-100 z-10">
-        <img
-          src={locationData.hero.image}
-          alt={`Sede MedSênior ${locationData.name}`}
-          className="w-full h-full object-cover object-top"
-          loading="eager"
-          fetchPriority="high"
-          width="1280"
-          height="720"
-        />
-        <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+        {/* Image Composition - Building Facade */}
+        <div className="relative order-1 lg:order-2 flex flex-col items-center justify-center mt-2 lg:mt-0">
+          <div className="relative w-full max-w-md lg:max-w-2xl">
+            {/* Main Image Container - Aspect Video for wider images */}
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-white bg-gray-100 z-10">
+              <img
+                src={locationData.hero.image}
+                alt={`Sede MedSênior ${locationData.name}`}
+                className="w-full h-full object-cover object-top"
+                loading="eager"
+                fetchPriority="high"
+                width="1280"
+                height="720"
+              />
+              <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
 
-        {/* Authorized Seal Badge - Within image container */}
-        {locationData.hero.badge && (
-          <div className="absolute top-4 right-0 bg-brand-accent text-brand-dark px-3 py-1.5 rounded-l-lg shadow-lg font-bold text-[10px] uppercase tracking-widest z-20">
-            {locationData.hero.badge}
-          </div>
-        )}
-      </div>
+              {/* Authorized Seal Badge - Within image container */}
+              {locationData.hero.badge && (
+                <div className="absolute top-4 right-0 bg-brand-accent text-brand-dark px-3 py-1.5 rounded-l-lg shadow-lg font-bold text-[10px] uppercase tracking-widest z-20">
+                  {locationData.hero.badge}
+                </div>
+              )}
+            </div>
 
-      {/* Info Box - PA 24h - Static below image now */}
-      {locationData.hero.differential && (
-        <div className="mt-4 bg-white p-4 rounded-xl shadow-lg border border-gray-100 w-full flex items-center gap-4 relative z-10">
-          <div className="bg-brand-light p-3 rounded-full text-brand-primary flex-shrink-0">
-            <Clock size={24} />
-          </div>
-          <div>
-            <p className="text-xs font-bold text-gray-500 uppercase mb-0.5">{locationData.hero.differential.title}</p>
-            <p className="text-brand-dark font-bold text-base leading-tight">{locationData.hero.differential.text}</p>
+            {/* Info Box - PA 24h - Static below image now */}
+            {locationData.hero.differential && (
+              <div className="mt-4 bg-white p-4 rounded-xl shadow-lg border border-gray-100 w-full flex items-center gap-4 relative z-10">
+                <div className="bg-brand-light p-3 rounded-full text-brand-primary flex-shrink-0">
+                  <Clock size={24} />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-500 uppercase mb-0.5">{locationData.hero.differential.title}</p>
+                  <p className="text-brand-dark font-bold text-base leading-tight">{locationData.hero.differential.text}</p>
+                </div>
+              </div>
+            )}
+
           </div>
         </div>
-      )}
 
-    </div>
-        </div >
-
-      </div >
-    </section >
+      </div>
+    </section>
   );
 };
