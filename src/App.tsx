@@ -33,6 +33,11 @@ function App() {
   // Determine if location switching is allowed
   const isLocationLocked = Boolean(ENV_LOCATION);
 
+  // Always scroll to top on initial load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     // Inicialização do Typebot com ID do ambiente
     const initTypebot = () => {
