@@ -28,9 +28,9 @@ export const Hero: React.FC<HeroProps> = ({ locationData, onCtaClick }) => {
             <span className="text-brand-primary">{locationData.hero.subtitle}</span>
           </h1>
 
-          <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-            Aproveite a tabela exclusiva para <strong>novas contratações</strong> em {locationData.name}. Conte com Hospital Próprio, Pronto-Atendimento 24h e carência zero*.
-          </p>
+          <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0 leading-relaxed" dangerouslySetInnerHTML={{
+            __html: locationData.hero.description || `Aproveite a tabela exclusiva para <strong>novas contratações</strong> em ${locationData.name}. Conte com Hospital Próprio, Pronto-Atendimento 24h e carência zero*.`
+          }} />
 
           {/* Explicit Sales Disclaimer Box */}
           <div className="bg-red-50 border-l-4 border-red-400 p-3 text-left text-sm text-gray-700 rounded-r-lg max-w-lg mx-auto lg:mx-0 shadow-sm">
@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ locationData, onCtaClick }) => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-            <Button onClick={onCtaClick} variant="primary" size="lg" className="w-full sm:w-auto shadow-xl shadow-brand-accent/30">
+            <Button onClick={onCtaClick} variant="primary" size="lg" className="w-full sm:w-auto">
               Quero Contratar
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>

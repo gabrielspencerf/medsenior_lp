@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button } from './ui/Button';
 import { Heart, Clock, Shield, Activity } from 'lucide-react';
+import { LocationData } from '../types';
 
 interface BenefitsProps {
   onCtaClick: () => void;
+  locationData?: LocationData;
 }
 
-export const BenefitsSection: React.FC<BenefitsProps> = ({ onCtaClick }) => {
+export const BenefitsSection: React.FC<BenefitsProps> = ({ onCtaClick, locationData }) => {
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +18,7 @@ export const BenefitsSection: React.FC<BenefitsProps> = ({ onCtaClick }) => {
           <div className="relative order-2 lg:order-1 group">
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-square lg:aspect-[4/5] border-8 border-white shadow-brand-dark/10">
               <img
-                src="/images/medsenior-plano-saude-mais-49.webp"
+                src="/images/benefits/medsenior-plano-saude-mais-49.webp"
                 alt="Oficinas de saúde MedSênior"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
@@ -48,7 +50,7 @@ export const BenefitsSection: React.FC<BenefitsProps> = ({ onCtaClick }) => {
                 {
                   icon: Clock,
                   title: "Carência Zero*",
-                  desc: "Migre de outro plano sem cumprir novos prazos (exceto D.P.).",
+                  desc: locationData?.carenciaText || "Migre de outro plano sem cumprir novos prazos (exceto CPT).",
                   color: "text-brand-primary bg-brand-light"
                 },
                 {

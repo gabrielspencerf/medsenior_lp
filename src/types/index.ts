@@ -20,6 +20,7 @@ export interface NetworkCategory {
     address?: string;
     district?: string;
     features?: string[];
+    image?: string;
 }
 
 export interface LocationData {
@@ -40,4 +41,6 @@ export interface LocationData {
     plans: Plan[];
     network: NetworkCategory[];
     ansCode?: string;
+    carenciaText?: string;
+    networkDescription?: string;
 }

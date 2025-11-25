@@ -4,6 +4,12 @@ import { Hero } from './components/Hero';
 import { Footer } from './components/Footer';
 import { GoogleTagManager } from './components/GoogleTagManager';
 import { locations } from './data/locations';
+import { HelmetProvider } from 'react-helmet-async';
+import { SEO } from './components/SEO';
+import { CookieConsent } from './components/CookieConsent';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { TermsOfService } from './components/TermsOfService';
+import { Modal } from './components/Modal';
 
 // Lazy load non-critical sections for performance
 const PlansSection = React.lazy(() => import('./components/PlansSection').then(module => ({ default: module.PlansSection })));
@@ -19,6 +25,9 @@ const ENV_TYPEBOT_ID = import.meta.env.VITE_TYPEBOT_ID || 'medseniorteste';
 function App() {
   // If VITE_LOCATION is set, lock to that location, otherwise default to Curitiba
   const [currentCity, setCurrentCity] = useState(ENV_LOCATION || "Curitiba");
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+
   const locationData = locations[currentCity] || locations["Curitiba"];
 
   // Determine if location switching is allowed
@@ -60,33 +69,63 @@ function App() {
     // Only allow city selection if location is not locked
     if (!isLocationLocked) {
       setCurrentCity(city);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Google Tag Manager */}
-      {ENV_GTM_ID && <GoogleTagManager gtmId={ENV_GTM_ID} />}
+    <HelmetProvider>
+      <div id="home" className="min-h-screen bg-white relative">
+        <span id="medsenior" className="absolute top-0 left-0 w-0 h-0 opacity-0 pointer-events-none"></span>
+        <SEO locationData={locationData} />
+        {/* Google Tag Manager */}
+        {ENV_GTM_ID && <GoogleTagManager gtmId={ENV_GTM_ID} />}
 
-      <Header />
-      <main>
-        <Hero locationData={locationData} onCtaClick={handleOpenChat} />
+        <Header onNavigate={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
 
-        <Suspense fallback={<div className="py-20 text-center">Carregando...</div>}>
-          <NetworkSection locationData={locationData} />
-          <PlansSection locationData={locationData} onCtaClick={handleOpenChat} />
-          <BenefitsSection onCtaClick={handleOpenChat} />
-          <LocationsGrid
-            currentCity={currentCity}
-            onCitySelect={handleCitySelect}
-            availableCities={Object.keys(locations)}
-            isLocked={isLocationLocked}
-          />
+        <main>
+          <Hero locationData={locationData} onCtaClick={handleOpenChat} />
 
-        </Suspense>
-      </main>
-      <Footer ansCode={locationData.ansCode} />
-    </div>
+          <Suspense fallback={<div className="py-20 text-center">Carregando...</div>}>
+            <NetworkSection locationData={locationData} />
+            <PlansSection locationData={locationData} onCtaClick={handleOpenChat} />
+            <BenefitsSection locationData={locationData} onCtaClick={handleOpenChat} />
+            <LocationsGrid
+              currentCity={currentCity}
+              onCitySelect={handleCitySelect}
+              availableCities={Object.keys(locations)}
+              isLocked={isLocationLocked}
+            />
+          </Suspense>
+        </main>
+
+        <Footer
+          ansCode={locationData.ansCode}
+          onPrivacyClick={() => setIsPrivacyModalOpen(true)}
+          onTermsClick={() => setIsTermsModalOpen(true)}
+        />
+
+        <CookieConsent onPrivacyClick={() => setIsPrivacyModalOpen(true)} />
+
+        {/* Privacy Policy Modal */}
+        <Modal
+          isOpen={isPrivacyModalOpen}
+          onClose={() => setIsPrivacyModalOpen(false)}
+          title="Política de Privacidade"
+        >
+          <PrivacyPolicy />
+        </Modal>
+
+        {/* Terms of Service Modal */}
+        <Modal
+          isOpen={isTermsModalOpen}
+          onClose={() => setIsTermsModalOpen(false)}
+          title="Termos de Uso"
+        >
+          <TermsOfService />
+        </Modal>
+      </div>
+    </HelmetProvider>
   );
 }
 

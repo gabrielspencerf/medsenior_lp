@@ -17,12 +17,30 @@ export const locations: Record<string, LocationData> = {
         },
         plans: [
             {
-                id: 1,
-                name: "Essencial",
-                badge: "Custo x Benefício",
-                priceDesc: "Enfermaria | ANS 494.303/23-1",
-                description: "Para quem quer qualidade sem pesar no bolso. O Essencial Enfermaria entrega ótimo custo-benefício, boa cobertura na rede credenciada e atendimento com padrão MedSênior.",
-                area: "Curitiba (PR)",
+                id: 0,
+                name: "Infiniti",
+                badge: "Novo Plano",
+                priceDesc: "Entre em Contato",
+                description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: false
+            },
+            {
+                id: 4,
+                name: "Black",
+                badge: "Premium",
+                priceDesc: "Apartamento | ANS 502.795/25-1",
+                description: "Segmento premium da MedSênior, com hospitais e clínicas de primeira linha, suporte a procedimentos complexos e atendimento mais personalizado.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: true
+            },
+            {
+                id: 3,
+                name: "PR4",
+                badge: "Privacidade",
+                priceDesc: "Apartamento | ANS 492.173/22-9",
+                description: "Plano em apartamento para quem prioriza privacidade nas internações, com rede credenciada ampla e foco em recuperação mais tranquila e confortável.",
+                area: "Campo Largo (PR), Curitiba (PR) e São José dos Pinhais (PR)",
                 highlight: false
             },
             {
@@ -35,22 +53,13 @@ export const locations: Record<string, LocationData> = {
                 highlight: false
             },
             {
-                id: 3,
-                name: "PR4",
-                badge: "Privacidade",
-                priceDesc: "Apartamento | ANS 492.173/22-9",
-                description: "Plano em apartamento para quem prioriza privacidade nas internações, com rede credenciada ampla e foco em recuperação mais tranquila e confortável.",
-                area: "Campo Largo (PR), Curitiba (PR) e São José dos Pinhais (PR)",
+                id: 1,
+                name: "Essencial",
+                badge: "Custo x Benefício",
+                priceDesc: "Enfermaria | ANS 494.303/23-1",
+                description: "Para quem quer qualidade sem pesar no bolso. O Essencial Enfermaria entrega ótimo custo-benefício, boa cobertura na rede credenciada e atendimento com padrão MedSênior.",
+                area: "Curitiba (PR)",
                 highlight: false
-            },
-            {
-                id: 4,
-                name: "Black",
-                badge: "Premium",
-                priceDesc: "Apartamento | ANS 502.795/25-1",
-                description: "Segmento premium da MedSênior, com hospitais e clínicas de primeira linha, suporte a procedimentos complexos e atendimento mais personalizado.",
-                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
-                highlight: true
             }
         ],
         network: [
@@ -104,12 +113,30 @@ export const locations: Record<string, LocationData> = {
         },
         plans: [
             {
-                id: 1,
-                name: "Essencial",
-                badge: "Custo x Benefício",
-                priceDesc: "Enfermaria | ANS 494.081/22-4",
-                description: "Opção de entrada com foco em preço competitivo e boa cobertura na rede credenciada de São Paulo, mantendo padrão de qualidade no atendimento.",
-                area: "São Paulo (SP)",
+                id: 0,
+                name: "Infiniti",
+                badge: "Novo Plano",
+                priceDesc: "Entre em Contato",
+                description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: false
+            },
+            {
+                id: 4,
+                name: "Black",
+                badge: "Premium",
+                priceDesc: "Apartamento | ANS 502.794/25-2",
+                description: "Plano topo de linha, com rede hospitalar selecionada, suporte a procedimentos de alta complexidade e atendimento diferenciado para o público 44+.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: true
+            },
+            {
+                id: 3,
+                name: "SP4",
+                badge: "Privacidade",
+                priceDesc: "Apartamento | ANS 502.800/25-1",
+                description: "Versão em apartamento do plano regional, oferecendo quarto individual nas internações, rede ampla e mais conforto no período de recuperação.",
+                area: "Guarulhos, Osasco, Santo André, São Bernardo do Campo, São Caetano do Sul, São Paulo, Campinas e Indaiatuba",
                 highlight: false
             },
             {
@@ -122,22 +149,13 @@ export const locations: Record<string, LocationData> = {
                 highlight: false
             },
             {
-                id: 3,
-                name: "SP4",
-                badge: "Privacidade",
-                priceDesc: "Apartamento | ANS 502.800/25-1",
-                description: "Versão em apartamento do plano regional, oferecendo quarto individual nas internações, rede ampla e mais conforto no período de recuperação.",
-                area: "Guarulhos, Osasco, Santo André, São Bernardo do Campo, São Caetano do Sul, São Paulo, Campinas e Indaiatuba",
+                id: 1,
+                name: "Essencial",
+                badge: "Custo x Benefício",
+                priceDesc: "Enfermaria | ANS 494.081/22-4",
+                description: "Opção de entrada com foco em preço competitivo e boa cobertura na rede credenciada de São Paulo, mantendo padrão de qualidade no atendimento.",
+                area: "São Paulo (SP)",
                 highlight: false
-            },
-            {
-                id: 4,
-                name: "Black",
-                badge: "Premium",
-                priceDesc: "Apartamento | ANS 502.794/25-2",
-                description: "Plano topo de linha, com rede hospitalar selecionada, suporte a procedimentos de alta complexidade e atendimento diferenciado para o público 44+.",
-                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
-                highlight: true
             }
         ],
         network: [
@@ -192,12 +210,30 @@ export const locations: Record<string, LocationData> = {
         },
         plans: [
             {
-                id: 1,
-                name: "Essencial",
-                badge: "Custo x Benefício",
-                priceDesc: "Enfermaria | ANS 493.678/22-7",
-                description: "Plano pensado para quem quer qualidade com mensalidade mais leve, reunindo bom custo-benefício e cobertura adequada na rede credenciada da região.",
-                area: "Belo Horizonte (MG) e Contagem (MG)",
+                id: 0,
+                name: "Infiniti",
+                badge: "Novo Plano",
+                priceDesc: "Entre em Contato",
+                description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: false
+            },
+            {
+                id: 4,
+                name: "Black",
+                badge: "Premium",
+                priceDesc: "Apartamento | ANS 502.795/25-1",
+                description: "Categoria premium para quem busca o máximo em estrutura, rede hospitalar robusta e maior personalização no cuidado médico.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: true
+            },
+            {
+                id: 3,
+                name: "MG4",
+                badge: "Privacidade",
+                priceDesc: "Apartamento | ANS 492.177/22-1",
+                description: "Plano em apartamento que oferece mais privacidade durante internações, mantendo a mesma rede ampla e foco em conforto e segurança na recuperação.",
+                area: "Belo Horizonte (MG), Betim (MG) e Contagem (MG)",
                 highlight: false
             },
             {
@@ -210,22 +246,13 @@ export const locations: Record<string, LocationData> = {
                 highlight: false
             },
             {
-                id: 3,
-                name: "MG4",
-                badge: "Privacidade",
-                priceDesc: "Apartamento | ANS 492.177/22-1",
-                description: "Plano em apartamento que oferece mais privacidade durante internações, mantendo a mesma rede ampla e foco em conforto e segurança na recuperação.",
-                area: "Belo Horizonte (MG), Betim (MG) e Contagem (MG)",
+                id: 1,
+                name: "Essencial",
+                badge: "Custo x Benefício",
+                priceDesc: "Enfermaria | ANS 493.678/22-7",
+                description: "Plano pensado para quem quer qualidade com mensalidade mais leve, reunindo bom custo-benefício e cobertura adequada na rede credenciada da região.",
+                area: "Belo Horizonte (MG) e Contagem (MG)",
                 highlight: false
-            },
-            {
-                id: 4,
-                name: "Black",
-                badge: "Premium",
-                priceDesc: "Apartamento | ANS 502.795/25-1",
-                description: "Categoria premium para quem busca o máximo em estrutura, rede hospitalar robusta e maior personalização no cuidado médico.",
-                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
-                highlight: true
             }
         ],
         network: [
@@ -277,11 +304,29 @@ export const locations: Record<string, LocationData> = {
         },
         plans: [
             {
-                id: 1,
-                name: "Essencial",
-                badge: "Custo x Benefício",
-                priceDesc: "Enfermaria | ANS 493.496/22-2",
-                description: "Entrada da linha MedSênior no DF, indicada para quem busca cobertura de qualidade com preço mais enxuto e rede credenciada essencial na região.",
+                id: 0,
+                name: "Infiniti",
+                badge: "Novo Plano",
+                priceDesc: "Entre em Contato",
+                description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: false
+            },
+            {
+                id: 4,
+                name: "Black",
+                badge: "Premium",
+                priceDesc: "Apartamento | ANS 502.795/25-1",
+                description: "Plano Black com foco em cuidados avançados, rede de hospitais de alto padrão e suporte para cirurgias e tratamentos mais complexos.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: true
+            },
+            {
+                id: 3,
+                name: "DF4",
+                badge: "Privacidade",
+                priceDesc: "Apartamento | ANS 485.900/20-6",
+                description: "Versão em apartamento voltada para quem valoriza privacidade nas internações, com estrutura pensada para uma recuperação mais tranquila.",
                 area: "Distrito Federal",
                 highlight: false
             },
@@ -295,22 +340,13 @@ export const locations: Record<string, LocationData> = {
                 highlight: false
             },
             {
-                id: 3,
-                name: "DF4",
-                badge: "Privacidade",
-                priceDesc: "Apartamento | ANS 485.900/20-6",
-                description: "Versão em apartamento voltada para quem valoriza privacidade nas internações, com estrutura pensada para uma recuperação mais tranquila.",
+                id: 1,
+                name: "Essencial",
+                badge: "Custo x Benefício",
+                priceDesc: "Enfermaria | ANS 493.496/22-2",
+                description: "Entrada da linha MedSênior no DF, indicada para quem busca cobertura de qualidade com preço mais enxuto e rede credenciada essencial na região.",
                 area: "Distrito Federal",
                 highlight: false
-            },
-            {
-                id: 4,
-                name: "Black",
-                badge: "Premium",
-                priceDesc: "Apartamento | ANS 502.795/25-1",
-                description: "Plano Black com foco em cuidados avançados, rede de hospitais de alto padrão e suporte para cirurgias e tratamentos mais complexos.",
-                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
-                highlight: true
             }
         ],
         network: [
@@ -361,13 +397,22 @@ export const locations: Record<string, LocationData> = {
         },
         plans: [
             {
-                id: 1,
-                name: "ES3",
-                badge: "Rede Ampla",
-                priceDesc: "Enfermaria | ANS 492.180/22-1",
-                description: "Enfermaria com rede credenciada maior na Grande Vitória. Ideal para quem quer mais opções de atendimento clínico, exames e internações.",
-                area: "Cariacica (ES), Serra (ES), Vila Velha (ES) e Vitória (ES)",
+                id: 0,
+                name: "Infiniti",
+                badge: "Novo Plano",
+                priceDesc: "Entre em Contato",
+                description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
                 highlight: false
+            },
+            {
+                id: 3,
+                name: "Black",
+                badge: "Premium",
+                priceDesc: "Apartamento | ANS 502.795/25-1",
+                description: "Opção premium do Espírito Santo, com rede de hospitais e clínicas selecionadas e estrutura preparada para procedimentos de maior complexidade.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: true
             },
             {
                 id: 2,
@@ -379,13 +424,13 @@ export const locations: Record<string, LocationData> = {
                 highlight: false
             },
             {
-                id: 3,
-                name: "Black",
-                badge: "Premium",
-                priceDesc: "Apartamento | ANS 502.795/25-1",
-                description: "Opção premium do Espírito Santo, com rede de hospitais e clínicas selecionadas e estrutura preparada para procedimentos de maior complexidade.",
-                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
-                highlight: true
+                id: 1,
+                name: "ES3",
+                badge: "Rede Ampla",
+                priceDesc: "Enfermaria | ANS 492.180/22-1",
+                description: "Enfermaria com rede credenciada maior na Grande Vitória. Ideal para quem quer mais opções de atendimento clínico, exames e internações.",
+                area: "Cariacica (ES), Serra (ES), Vila Velha (ES) e Vitória (ES)",
+                highlight: false
             }
         ],
         network: [
@@ -404,21 +449,9 @@ export const locations: Record<string, LocationData> = {
                 icon: "lab",
                 items: [
                     { name: "Laboratório MedSênior (com coleta domiciliar)" },
-                    { name: "Tommasi" },
-                    { name: "Pretti" }
+                    { name: "Tommasi" }
                 ]
             },
-            {
-                title: "Estrutura Própria",
-                icon: "own",
-                description: "A mais completa rede própria da operadora.",
-                features: [
-                    "Hospital MedSênior",
-                    "Centro de Terapia da Dor",
-                    "Centro de Oncologia",
-                    "Unidades de Pronto Atendimento"
-                ]
-            }
         ]
     },
 
@@ -438,11 +471,29 @@ export const locations: Record<string, LocationData> = {
         },
         plans: [
             {
-                id: 1,
-                name: "Essencial",
-                badge: "Custo x Benefício",
-                priceDesc: "Enfermaria | ANS 494.293/23-1",
-                description: "Plano com foco em acessibilidade e qualidade, garantindo cobertura básica importante na rede credenciada do Rio.",
+                id: 0,
+                name: "Infiniti",
+                badge: "Novo Plano",
+                priceDesc: "Entre em Contato",
+                description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: false
+            },
+            {
+                id: 4,
+                name: "Black",
+                badge: "Premium",
+                priceDesc: "Apartamento | ANS 502.795/25-1",
+                description: "Linha Black com acesso a rede mais seletiva e suporte completo em procedimentos de maior complexidade na capital fluminense.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: true
+            },
+            {
+                id: 3,
+                name: "RJ2",
+                badge: "Privacidade",
+                priceDesc: "Apartamento | ANS 489.487/21-1",
+                description: "Plano em apartamento para quem prefere acomodação exclusiva nas internações, mantendo rede estruturada e conforto no cuidado.",
                 area: "Rio de Janeiro (RJ)",
                 highlight: false
             },
@@ -456,22 +507,13 @@ export const locations: Record<string, LocationData> = {
                 highlight: false
             },
             {
-                id: 3,
-                name: "RJ2",
-                badge: "Privacidade",
-                priceDesc: "Apartamento | ANS 489.487/21-1",
-                description: "Plano em apartamento para quem prefere acomodação exclusiva nas internações, mantendo rede estruturada e conforto no cuidado.",
+                id: 1,
+                name: "Essencial",
+                badge: "Custo x Benefício",
+                priceDesc: "Enfermaria | ANS 494.293/23-1",
+                description: "Plano com foco em acessibilidade e qualidade, garantindo cobertura básica importante na rede credenciada do Rio.",
                 area: "Rio de Janeiro (RJ)",
                 highlight: false
-            },
-            {
-                id: 4,
-                name: "Black",
-                badge: "Premium",
-                priceDesc: "Apartamento | ANS 502.795/25-1",
-                description: "Linha Black com acesso a rede mais seletiva e suporte completo em procedimentos de maior complexidade na capital fluminense.",
-                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
-                highlight: true
             }
         ],
         network: [
@@ -524,11 +566,29 @@ export const locations: Record<string, LocationData> = {
         },
         plans: [
             {
-                id: 1,
-                name: "Essencial",
-                badge: "Custo x Benefício",
-                priceDesc: "Enfermaria | ANS 495.664/23-8",
-                description: "Plano de entrada em Porto Alegre, com bom custo-benefício e cobertura adequada na rede credenciada local.",
+                id: 0,
+                name: "Infiniti",
+                badge: "Novo Plano",
+                priceDesc: "Entre em Contato",
+                description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: false
+            },
+            {
+                id: 4,
+                name: "Black",
+                badge: "Premium",
+                priceDesc: "Apartamento | ANS 502.795/25-1",
+                description: "Produto premium com cobertura em diversos estados, indicado para quem busca estrutura de alto nível e atendimento diferenciado.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: true
+            },
+            {
+                id: 3,
+                name: "APAR. POA",
+                badge: "Privacidade",
+                priceDesc: "Apartamento | ANS 498.285/24-1",
+                description: "Plano em apartamento com foco em privacidade e conforto durante internações, mantendo ampla rede credenciada em Porto Alegre.",
                 area: "Porto Alegre (RS)",
                 highlight: false
             },
@@ -542,22 +602,13 @@ export const locations: Record<string, LocationData> = {
                 highlight: false
             },
             {
-                id: 3,
-                name: "APAR. POA",
-                badge: "Privacidade",
-                priceDesc: "Apartamento | ANS 498.285/24-1",
-                description: "Plano em apartamento com foco em privacidade e conforto durante internações, mantendo ampla rede credenciada em Porto Alegre.",
+                id: 1,
+                name: "Essencial",
+                badge: "Custo x Benefício",
+                priceDesc: "Enfermaria | ANS 495.664/23-8",
+                description: "Plano de entrada em Porto Alegre, com bom custo-benefício e cobertura adequada na rede credenciada local.",
                 area: "Porto Alegre (RS)",
                 highlight: false
-            },
-            {
-                id: 4,
-                name: "Black",
-                badge: "Premium",
-                priceDesc: "Apartamento | ANS 502.795/25-1",
-                description: "Produto premium com cobertura em diversos estados, indicado para quem busca estrutura de alto nível e atendimento diferenciado.",
-                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
-                highlight: true
             }
         ],
         network: [
@@ -609,13 +660,22 @@ export const locations: Record<string, LocationData> = {
         },
         plans: [
             {
-                id: 1,
-                name: "REC 1",
-                badge: "Rede Ampla",
-                priceDesc: "Enfermaria | ANS 502.797/25-7",
-                description: "Plano em enfermaria com boa rede credenciada em Recife, equilibrando acesso a serviços e mensalidade acessível.",
-                area: "Recife (PE)",
+                id: 0,
+                name: "Infiniti",
+                badge: "Novo Plano",
+                priceDesc: "Entre em Contato",
+                description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
                 highlight: false
+            },
+            {
+                id: 3,
+                name: "Black",
+                badge: "Premium",
+                priceDesc: "Apartamento | ANS 502.795/25-1",
+                description: "Modalidade premium com rede de referência e maior abrangência nacional, mantendo foco em atendimento personalizado.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: true
             },
             {
                 id: 2,
@@ -627,13 +687,13 @@ export const locations: Record<string, LocationData> = {
                 highlight: false
             },
             {
-                id: 3,
-                name: "Black",
-                badge: "Premium",
-                priceDesc: "Apartamento | ANS 502.795/25-1",
-                description: "Modalidade premium com rede de referência e maior abrangência nacional, mantendo foco em atendimento personalizado.",
-                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
-                highlight: true
+                id: 1,
+                name: "REC 1",
+                badge: "Rede Ampla",
+                priceDesc: "Enfermaria | ANS 502.797/25-7",
+                description: "Plano em enfermaria com boa rede credenciada em Recife, equilibrando acesso a serviços e mensalidade acessível.",
+                area: "Recife (PE)",
+                highlight: false
             }
         ],
         network: [
@@ -685,11 +745,29 @@ export const locations: Record<string, LocationData> = {
         },
         plans: [
             {
-                id: 1,
-                name: "Essencial",
-                badge: "Custo x Benefício",
-                priceDesc: "Enfermaria | ANS 499.101/24-0",
-                description: "Essencial Enfermaria com perfil mais econômico, indicado para quem quer entrar na rede MedSênior em Campinas com boa relação custo x cobertura.",
+                id: 0,
+                name: "Infiniti",
+                badge: "Novo Plano",
+                priceDesc: "Entre em Contato",
+                description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: false
+            },
+            {
+                id: 4,
+                name: "Black",
+                badge: "Premium",
+                priceDesc: "Apartamento | ANS 502.795/25-1",
+                description: "Plano Black com foco em experiência premium, Rede MedSênior ampliada e suporte a procedimentos de maior complexidade.",
+                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
+                highlight: true
+            },
+            {
+                id: 3,
+                name: "CPS 2",
+                badge: "Privacidade",
+                priceDesc: "Apartamento | ANS 499.103/24-6",
+                description: "Versão em apartamento da linha Campinas, garantindo acomodação exclusiva nas internações e boa estrutura de rede.",
                 area: "Campinas (SP)",
                 highlight: false
             },
@@ -703,22 +781,13 @@ export const locations: Record<string, LocationData> = {
                 highlight: false
             },
             {
-                id: 3,
-                name: "CPS 2",
-                badge: "Privacidade",
-                priceDesc: "Apartamento | ANS 499.103/24-6",
-                description: "Versão em apartamento da linha Campinas, garantindo acomodação exclusiva nas internações e boa estrutura de rede.",
+                id: 1,
+                name: "Essencial",
+                badge: "Custo x Benefício",
+                priceDesc: "Enfermaria | ANS 499.101/24-0",
+                description: "Essencial Enfermaria com perfil mais econômico, indicado para quem quer entrar na rede MedSênior em Campinas com boa relação custo x cobertura.",
                 area: "Campinas (SP)",
                 highlight: false
-            },
-            {
-                id: 4,
-                name: "Black",
-                badge: "Premium",
-                priceDesc: "Apartamento | ANS 502.795/25-1",
-                description: "Plano Black com foco em experiência premium, Rede MedSênior ampliada e suporte a procedimentos de maior complexidade.",
-                area: "DF, ES, MG, PR, RJ, RS, SP e PE",
-                highlight: true
             }
         ],
         network: [

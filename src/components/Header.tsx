@@ -1,10 +1,23 @@
 import React from 'react';
 import { Award } from 'lucide-react';
 
-const BRASCARE_LOGO = "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/10/brascare-logotipo-horizontal.png";
+const BRASCARE_LOGO = "/images/branding/brascare-logotipo-horizontal.png";
 const MEDSENIOR_LOGO = "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/Logotipo.png";
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onNavigate?: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate();
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="bg-white border-b border-gray-100 py-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,11 +25,13 @@ export const Header: React.FC = () => {
 
           {/* Left: BrasCare Logo */}
           <div className="flex items-center justify-start flex-shrink-0">
-            <img
-              src={BRASCARE_LOGO}
-              alt="BrasCare Corretora"
-              className="h-6 md:h-9 w-auto object-contain"
-            />
+            <a href="#" onClick={handleLogoClick} className="cursor-pointer">
+              <img
+                src={BRASCARE_LOGO}
+                alt="BrasCare Corretora"
+                className="h-6 md:h-9 w-auto object-contain"
+              />
+            </a>
           </div>
 
           {/* Center/Right: Actions & Official Seal */}

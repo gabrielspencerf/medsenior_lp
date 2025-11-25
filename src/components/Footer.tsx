@@ -2,9 +2,11 @@ import React from 'react';
 
 interface FooterProps {
   ansCode?: string;
+  onPrivacyClick?: () => void;
+  onTermsClick?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ ansCode }) => {
+export const Footer: React.FC<FooterProps> = ({ ansCode, onPrivacyClick, onTermsClick }) => {
   return (
     <footer className="bg-[#011c16] text-gray-400 py-12 border-t border-white/5 font-light text-sm">
       <div className="max-w-7xl mx-auto px-4">
@@ -33,8 +35,32 @@ export const Footer: React.FC<FooterProps> = ({ ansCode }) => {
           </div>
 
           <div className="md:col-span-1 text-center md:text-right space-y-2">
-            <a href="#" className="block hover:text-brand-accent transition-colors">Termos de Uso</a>
-            <a href="#" className="block hover:text-brand-accent transition-colors">Política de Privacidade</a>
+            {onTermsClick ? (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  onTermsClick();
+                }}
+                className="block hover:text-brand-accent transition-colors text-left bg-transparent border-none p-0 cursor-pointer w-full md:text-right"
+              >
+                Termos de Uso
+              </button>
+            ) : (
+              <a href="#" className="block hover:text-brand-accent transition-colors">Termos de Uso</a>
+            )}
+            {onPrivacyClick ? (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  onPrivacyClick();
+                }}
+                className="block hover:text-brand-accent transition-colors text-left bg-transparent border-none p-0 cursor-pointer w-full md:text-right"
+              >
+                Política de Privacidade
+              </button>
+            ) : (
+              <a href="#" className="block hover:text-brand-accent transition-colors">Política de Privacidade</a>
+            )}
           </div>
 
         </div>
