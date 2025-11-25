@@ -38,7 +38,6 @@ export const PlansSection: React.FC<PlansProps> = ({
 
   return (
     <section
-      id="planos"
       className="py-24 bg-brand-dark relative overflow-hidden"
     >
       {/* Clean Matte Background */}
