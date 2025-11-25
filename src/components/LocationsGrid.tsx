@@ -33,39 +33,26 @@ export const LocationsGrid: React.FC<LocationsProps> = ({
               <h3 className="text-xl font-semibold text-gray-700">
                 Nossas Praças
               </h3>
-              {isLocked && (
-                <span className="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-200 px-3 py-1 rounded-full border border-gray-300">
-                  <Lock className="w-3 h-3" /> Localização Fixa
-                </span>
-              )}
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3">
               {availableCities.map((city, idx) => {
                 const isCurrent = city === currentCity;
 
-                // Dynamic class construction based on state
+                // Dynamic class construction - same visual appearance whether locked or not
                 let btnClass =
                   "relative flex items-center gap-3 px-5 py-4 rounded-xl transition-all duration-300 border text-left group ";
 
-                if (isLocked) {
-                  btnClass += "cursor-not-allowed opacity-60 ";
-                  if (isCurrent) {
-                    btnClass +=
-                      "bg-brand-primary text-white border-brand-primary shadow-sm opacity-100 ring-2 ring-brand-primary ring-offset-2 ";
-                  } else {
-                    btnClass +=
-                      "bg-gray-100 text-gray-400 border-gray-200 hover:bg-gray-100 ";
-                  }
+                // Cursor changes based on locked state
+                btnClass += isLocked ? "cursor-not-allowed " : "cursor-pointer ";
+
+                // Visual styling is the same regardless of locked state
+                if (isCurrent) {
+                  btnClass +=
+                    "bg-brand-primary text-white border-brand-primary shadow-lg shadow-brand-primary/20 transform scale-105 z-10 ";
                 } else {
-                  btnClass += "cursor-pointer ";
-                  if (isCurrent) {
-                    btnClass +=
-                      "bg-brand-primary text-white border-brand-primary shadow-lg shadow-brand-primary/20 transform scale-105 z-10 ";
-                  } else {
-                    btnClass +=
-                      "bg-white text-gray-600 border-gray-200 hover:border-brand-primary hover:text-brand-primary hover:shadow-md hover:-translate-y-0.5 ";
-                  }
+                  btnClass +=
+                    "bg-white text-gray-600 border-gray-200 hover:border-brand-primary hover:text-brand-primary hover:shadow-md hover:-translate-y-0.5 ";
                 }
 
                 return (
@@ -77,17 +64,13 @@ export const LocationsGrid: React.FC<LocationsProps> = ({
                     aria-label={`Selecionar cidade ${city}`}
                     aria-current={isCurrent ? "location" : undefined}
                   >
-                    {isLocked && isCurrent ? (
-                      <Lock className="w-5 h-5 text-brand-accent flex-shrink-0" />
-                    ) : (
-                      <MapPin
-                        className={`w-5 h-5 flex-shrink-0 transition-colors ${isCurrent ? "text-brand-accent" : "text-gray-400 group-hover:text-brand-primary"}`}
-                      />
-                    )}
+                    <MapPin
+                      className={`w-5 h-5 flex-shrink-0 transition-colors ${isCurrent ? "text-brand-accent" : "text-gray-400 group-hover:text-brand-primary"}`}
+                    />
 
                     <span className="font-medium truncate">{city}</span>
 
-                    {isCurrent && !isLocked && (
+                    {isCurrent && (
                       <span className="absolute right-3 w-2 h-2 bg-brand-accent rounded-full animate-pulse shadow-lg shadow-brand-accent/50"></span>
                     )}
                   </button>
