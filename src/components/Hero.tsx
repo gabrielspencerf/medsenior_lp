@@ -75,6 +75,8 @@ export const Hero: React.FC<HeroProps> = ({ locationData, onCtaClick }) => {
                 alt={`Sede MedSênior ${locationData.name}`}
                 className="w-full h-full object-cover object-top"
                 loading="eager"
+                width="1280"
+                height="720"
               />
               <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
 

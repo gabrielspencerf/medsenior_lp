@@ -160,7 +160,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
         {/* Elegant Dark Background */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/5 to-transparent pointer-events-none opacity-50"></div>
 
-        <div className="p-10 flex flex-col h-full relative z-10">
+        <div className="p-6 sm:p-10 flex flex-col h-full relative z-10">
           {/* Top Label - Subtle & Elegant */}
           <div className="mb-6 text-center">
             <span className="text-emerald-400 text-[10px] font-bold uppercase tracking-[0.25em]">
@@ -219,7 +219,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
           </span>
         </div>
 
-        <div className="p-10 flex flex-col h-full">
+        <div className="p-6 sm:p-10 flex flex-col h-full">
           <div className="mb-8">
             <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">
               {plan.badge}
@@ -280,7 +280,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
     <div
       className={`${baseClasses} bg-white border border-gray-200 hover:border-brand-primary/30 group`}
     >
-      <div className="p-10 flex flex-col h-full">
+      <div className="p-6 sm:p-10 flex flex-col h-full">
         <div className="mb-8">
           <span className="inline-block px-3 py-1 rounded-full bg-gray-50 text-gray-500 border border-gray-100 text-[10px] font-bold uppercase tracking-wide mb-4">
             {plan.badge}
