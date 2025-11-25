@@ -33,9 +33,17 @@ function App() {
   // Determine if location switching is allowed
   const isLocationLocked = Boolean(ENV_LOCATION);
 
-  // Always scroll to top on initial load
+  // Scroll to Hero section (#home) on initial load
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const scrollToHero = () => {
+      const heroElement = document.getElementById('home');
+      if (heroElement) {
+        heroElement.scrollIntoView({ behavior: 'instant' });
+      }
+    };
+
+    // Small delay to ensure DOM is ready
+    setTimeout(scrollToHero, 100);
   }, []);
 
   useEffect(() => {
