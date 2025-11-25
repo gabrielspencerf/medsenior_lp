@@ -35,15 +35,27 @@ function App() {
 
   // Scroll to Hero section (#home) on initial load
   useEffect(() => {
+    // Disable browser scroll restoration to ensure we control the initial position
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
     const scrollToHero = () => {
       const heroElement = document.getElementById('home');
       if (heroElement) {
-        heroElement.scrollIntoView({ behavior: 'instant' });
+        const headerHeight = 0; // We want to scroll PAST the header
+        const elementPosition = heroElement.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - headerHeight,
+          behavior: 'instant'
+        });
       }
     };
 
-    // Small delay to ensure DOM is ready
+    // Attempt scroll immediately and after a short delay to handle layout shifts
+    scrollToHero();
     setTimeout(scrollToHero, 100);
+    setTimeout(scrollToHero, 500); // Backup for slower loads
   }, []);
 
   useEffect(() => {
