@@ -31,6 +31,7 @@ export interface LocationData {
         title: string;
         subtitle: string;
         image: string;
+        mobileImage?: string;
         badge?: string;
         description?: string;
         differential?: {

@@ -10,7 +10,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ locationData, onCtaClick }) => {
   return (
-    <section id="home" className="relative bg-white min-h-[85vh] flex items-center pt-4 pb-12 lg:pt-12 overflow-hidden">
+    <section id="home" className="relative bg-white min-h-[85vh] flex items-center pt-2 pb-6 lg:pt-12 lg:pb-12 overflow-hidden">
       {/* Navigation anchors */}
       <span id="medsenior" className="absolute top-0 left-0 opacity-0 pointer-events-none"></span>
       <span id="planos" className="absolute top-0 left-0 opacity-0 pointer-events-none"></span>
@@ -18,10 +18,10 @@ export const Hero: React.FC<HeroProps> = ({ locationData, onCtaClick }) => {
       {/* Organic shapes background */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[#f2f9f1] rounded-bl-[10rem] -z-0 pointer-events-none hidden lg:block"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
 
         {/* Content */}
-        <div className="space-y-6 text-center lg:text-left order-2 lg:order-1">
+        <div className="space-y-3 lg:space-y-6 text-center lg:text-left order-2 lg:order-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light border border-brand-primary/20 self-center lg:self-start mx-auto lg:mx-0">
             <span className="flex h-2 w-2 rounded-full bg-brand-primary animate-pulse"></span>
             <span className="text-brand-dark text-xs font-bold tracking-wide uppercase">Central de Vendas {locationData.name}</span>
@@ -47,7 +47,7 @@ export const Hero: React.FC<HeroProps> = ({ locationData, onCtaClick }) => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
             <Button onClick={onCtaClick} variant="primary" size="lg" className="w-full sm:w-auto">
               Quero Contratar
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ locationData, onCtaClick }) => {
             </Button>
           </div>
 
-          <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-6 text-sm text-gray-500 font-medium border-t border-gray-100 mt-6 w-full lg:w-max">
+          <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-3 lg:pt-6 text-sm text-gray-500 font-medium border-t border-gray-100 mt-3 lg:mt-6 w-full lg:w-max">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-brand-primary" />
               <span>Contratação Segura</span>
@@ -70,7 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ locationData, onCtaClick }) => {
         </div>
 
         {/* Image Composition - Building Facade */}
-        <div className="relative order-1 lg:order-2 flex flex-col items-center justify-center mt-2 lg:mt-0">
+        <div className="relative order-1 lg:order-2 flex flex-col items-center justify-center mt-0 lg:mt-0">
           <div className="relative w-full max-w-md lg:max-w-2xl">
             {/* Main Image Container - Aspect Video for wider images */}
             <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-white bg-gray-100 z-10">

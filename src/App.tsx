@@ -11,6 +11,7 @@ import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsOfService } from './components/TermsOfService';
 import { Modal } from './components/Modal';
 
+
 // Lazy load non-critical sections for performance
 const PlansSection = React.lazy(() => import('./components/PlansSection').then(module => ({ default: module.PlansSection })));
 const LocationsGrid = React.lazy(() => import('./components/LocationsGrid').then(module => ({ default: module.LocationsGrid })));
@@ -35,27 +36,15 @@ function App() {
 
   // Scroll to Hero section (#home) on initial load
   useEffect(() => {
-    // Disable browser scroll restoration to ensure we control the initial position
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-
     const scrollToHero = () => {
       const heroElement = document.getElementById('home');
       if (heroElement) {
-        const headerHeight = 0; // We want to scroll PAST the header
-        const elementPosition = heroElement.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-          top: elementPosition - headerHeight,
-          behavior: 'instant'
-        });
+        heroElement.scrollIntoView({ behavior: 'instant' });
       }
     };
 
-    // Attempt scroll immediately and after a short delay to handle layout shifts
-    scrollToHero();
-    setTimeout(scrollToHero, 100);
-    setTimeout(scrollToHero, 500); // Backup for slower loads
+    // Small delay to ensure DOM is ready
+    setTimeout(scrollToHero, 50);
   }, []);
 
   useEffect(() => {
@@ -100,13 +89,17 @@ function App() {
 
   return (
     <HelmetProvider>
-      <div id="home" className="min-h-screen bg-white relative">
-        <span id="medsenior" className="absolute top-0 left-0 w-0 h-0 opacity-0 pointer-events-none"></span>
+      <div className="min-h-screen bg-white relative">
         <SEO locationData={locationData} />
         {/* Google Tag Manager */}
         {ENV_GTM_ID && <GoogleTagManager gtmId={ENV_GTM_ID} />}
 
-        <Header onNavigate={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
+        <Header onNavigate={() => {
+          const heroElement = document.getElementById('home');
+          if (heroElement) {
+            heroElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }} />
 
         <main>
           <Hero locationData={locationData} onCtaClick={handleOpenChat} />
