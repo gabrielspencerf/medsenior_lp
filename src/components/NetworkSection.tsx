@@ -14,7 +14,7 @@ export const NetworkSection: React.FC<NetworkProps> = ({ locationData }) => {
                     <h2 className="text-brand-primary font-bold uppercase tracking-wider text-sm mb-2">Estrutura de Ponta</h2>
                     <h3 className="text-3xl font-bold text-brand-dark mb-4">Rede Credenciada em {locationData.name}</h3>
                     <p className="text-gray-600 text-lg">
-                        {locationData.networkDescription || "Conte com hospitais de referência e uma unidade própria completa com Pronto-Atendimento 24h."}
+                        {locationData.networkDescription || "Conte com hospitais de referência e uma unidade com centro de oncologia próprio Medsênior"}
                     </p>
                 </div>
 

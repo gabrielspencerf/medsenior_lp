@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ ansCode, onPrivacyClick, onTerms
 
           <div className="md:col-span-1 text-center md:text-left space-y-2">
             <h4 className="text-white font-bold mb-2">MedSênior</h4>
-            <p>ANS: {ansCode || "41782-3"}</p>
+            <p>ANS: {ansCode || "33.561-4"}</p>
             <p>Samedil Serv. Med. Hospitalares S.A</p>
           </div>
 

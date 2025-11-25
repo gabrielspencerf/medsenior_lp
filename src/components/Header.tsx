@@ -1,8 +1,8 @@
 import React from 'react';
 import { Award } from 'lucide-react';
 
-const BRASCARE_LOGO = "/images/branding/brascare-logotipo-horizontal.png";
-const MEDSENIOR_LOGO = "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/07/Logotipo.png";
+const BRASCARE_LOGO = "/images/branding/brascare-logotipo-horizontal.webp";
+const MEDSENIOR_LOGO = "/images/medsenior-logotipo.webp";
 
 interface HeaderProps {
   onNavigate?: () => void;

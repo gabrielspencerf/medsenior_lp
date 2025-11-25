@@ -88,15 +88,15 @@ export const PlansSection: React.FC<PlansProps> = ({
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {locationData.plans.map((plan, index) => {
-                const isInfiniti = plan.name === "Infiniti";
+                const isInfinite = plan.name === "Infinite";
                 const isPlanBlack = plan.name.toLowerCase().includes("black");
-                const isBlack = (plan.highlight && !isInfiniti) || isPlanBlack;
+                const isBlack = (plan.highlight && !isInfinite) || isPlanBlack;
 
                 return (
                   <PlanCard
                     key={plan.id}
                     plan={plan}
-                    isInfiniti={isInfiniti}
+                    isInfinite={isInfinite}
                     isBlack={isBlack}
                     onCtaClick={onCtaClick}
                     index={index}
@@ -127,7 +127,7 @@ export const PlansSection: React.FC<PlansProps> = ({
 
 interface PlanCardProps {
   plan: Plan;
-  isInfiniti: boolean;
+  isInfinite: boolean;
   isBlack: boolean;
   onCtaClick: () => void;
   index: number;
@@ -135,7 +135,7 @@ interface PlanCardProps {
 
 const PlanCard: React.FC<PlanCardProps> = ({
   plan,
-  isInfiniti,
+  isInfinite,
   isBlack,
   onCtaClick,
   index,
@@ -151,8 +151,8 @@ const PlanCard: React.FC<PlanCardProps> = ({
   const buttonClass =
     "w-full py-4 rounded-xl font-medium text-white bg-brand-primary hover:bg-brand-dark border border-transparent transition-all duration-300";
 
-  // 1. INFINITI CARD DESIGN
-  if (isInfiniti) {
+  // 1. INFINITE CARD DESIGN
+  if (isInfinite) {
     return (
       <div
         className={`${baseClasses} bg-gradient-to-br from-[#133b32] to-[#05110e] border border-white/10 overflow-hidden group hover:border-brand-primary/30`}
@@ -189,7 +189,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
                 <span className="text-white font-medium">exclusividade</span>.
               </p>
               <p className="text-emerald-400/90 font-medium text-xs uppercase tracking-widest pt-4 border-t border-white/5">
-                Reservado para poucos
+                O mais completo plano MedSênior
               </p>
             </div>
           </div>
@@ -197,7 +197,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
           {/* Footer Action */}
           <div className="mt-auto pt-8">
             <Button onClick={onCtaClick} className={buttonClass}>
-              Descobrir o Infiniti
+              Descobrir o Infinite
             </Button>
           </div>
         </div>
@@ -258,10 +258,15 @@ const PlanCard: React.FC<PlanCardProps> = ({
 
           <div className="pt-8 border-t border-gray-100 mt-auto">
             {plan.area && (
-              <div className="flex items-center gap-2 mb-6 text-gray-400">
-                <MapPin className="w-3.5 h-3.5" />
-                <span className="text-[10px] uppercase font-bold tracking-wide">
-                  Abrangência Nacional
+              <div className="flex flex-col gap-2 mb-6 text-gray-400">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span className="text-[10px] uppercase font-bold tracking-wide">
+                    ÁREA DE ATUAÇÃO
+                  </span>
+                </div>
+                <span className="text-[10px] leading-tight pl-5.5">
+                  {plan.area}
                 </span>
               </div>
             )}

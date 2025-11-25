@@ -75,6 +75,7 @@ export const Hero: React.FC<HeroProps> = ({ locationData, onCtaClick }) => {
                 alt={`Sede MedSênior ${locationData.name}`}
                 className="w-full h-full object-cover object-top"
                 loading="eager"
+                fetchPriority="high"
                 width="1280"
                 height="720"
               />

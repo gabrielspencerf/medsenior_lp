@@ -11,17 +11,18 @@ export const locations: Record<string, LocationData> = {
             image: "/images/hero/curitiba_medsenior.webp",
             badge: "Unidade Própria",
             differential: {
-                title: "Diferencial Curitiba",
+                title: "Curitiba/Paraná",
                 text: "Unidade própria com Oficinas de Arte e Terapia e Medicina Preventiva."
-            }
+            },
+            description: "Aproveite a tabela exclusiva para <strong>novas contratações</strong> em Curitiba. Conte com o melhor em rede hospitalar e ambulatorial tudo sem coparticipação."
         },
         plans: [
             {
                 id: 0,
-                name: "Infiniti",
+                name: "Infinite",
                 badge: "Novo Plano",
                 priceDesc: "Entre em Contato",
-                description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
+                description: "O mais completo plano MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
                 area: "DF, ES, MG, PR, RJ, RS, SP e PE",
                 highlight: false
             },
@@ -107,14 +108,15 @@ export const locations: Record<string, LocationData> = {
             image: "/images/hero/sao_paulo_medsenior.webp",
             badge: "Rede Credenciada Premium",
             differential: {
-                title: "Diferencial SP",
-                text: "Pronto Atendimento Virtual e Oficinas de Saúde nas unidades próprias."
-            }
+                title: "São Paulo/SP",
+                text: "Unidades próprias com foco no melhor da medicina preventiva."
+            },
+            description: "Aproveite a tabela exclusiva para <strong>novas contratações</strong> em São Paulo e região! Planos <strong>sem coparticipação</strong>."
         },
         plans: [
             {
                 id: 0,
-                name: "Infiniti",
+                name: "Infinite",
                 badge: "Novo Plano",
                 priceDesc: "Entre em Contato",
                 description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
@@ -132,7 +134,7 @@ export const locations: Record<string, LocationData> = {
             },
             {
                 id: 3,
-                name: "SP4",
+                name: "SP2",
                 badge: "Privacidade",
                 priceDesc: "Apartamento | ANS 502.800/25-1",
                 description: "Versão em apartamento do plano regional, oferecendo quarto individual nas internações, rede ampla e mais conforto no período de recuperação.",
@@ -141,7 +143,7 @@ export const locations: Record<string, LocationData> = {
             },
             {
                 id: 2,
-                name: "SP3",
+                name: "SP1",
                 badge: "Rede Ampla",
                 priceDesc: "Enfermaria | ANS 502.801/25-9",
                 description: "Plano em enfermaria com rede ampliada. Ideal para quem quer mais opções de hospitais e médicos em São Paulo e região metropolitana pagando um valor ainda acessível.",
@@ -163,12 +165,11 @@ export const locations: Record<string, LocationData> = {
                 title: "Hospitais Destaque",
                 icon: "hospital",
                 items: [
-                    { name: "Hospital Santa Virgínia" },
-                    { name: "Hospital Sepaco" },
-                    { name: "Hospital Leforte Morumbi" },
-                    { name: "Hospital Santa Paula" },
-                    { name: "Hospital Alvorada Moema" },
-                    { name: "Hospital Santa Marcelina" }
+                    { name: "Hospital Alemão Oswaldo Cruz" },
+                    { name: "Hospital 9 de Julho" },
+                    { name: "Hospital Samaritano" },
+                    { name: "Hospital Santa Catarina" },
+                    { name: "Hospital Beneficência Portuguesa" }
                 ]
             },
             {
@@ -176,7 +177,8 @@ export const locations: Record<string, LocationData> = {
                 icon: "lab",
                 items: [
                     { name: "A+ (Grupo Fleury)" },
-                    { name: "CDB - Centro de Diagnósticos Brasil" },
+                    { name: "Delboni" },
+                    { name: "Salomão Zappi" },
                     { name: "Femme Laboratório da Mulher" },
                     { name: "Hermes Pardini" }
                 ]
@@ -204,14 +206,14 @@ export const locations: Record<string, LocationData> = {
             image: "/images/hero/belo_horizonte_medsenior.webp",
             badge: "Estrutura Completa",
             differential: {
-                title: "Diferencial BH",
+                title: "Belo Horizonte/Minas Gerais",
                 text: "Centro de Oncologia próprio e Unidades de Pronto Atendimento 24h."
             }
         },
         plans: [
             {
                 id: 0,
-                name: "Infiniti",
+                name: "Infinite",
                 badge: "Novo Plano",
                 priceDesc: "Entre em Contato",
                 description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
@@ -298,14 +300,15 @@ export const locations: Record<string, LocationData> = {
             image: "/images/hero/brasilia_medsenior.webp",
             badge: "Especialidades Próprias",
             differential: {
-                title: "Diferencial DF",
+                title: "Brasília/Distrito Federal",
                 text: "Centro Oftalmológico exclusivo e Prontos-Socorros 24h no SIG e Taguatinga."
-            }
+            },
+            description: "Aproveite a tabela exclusiva para <strong>novas contratações</strong> em Brasília. Conte com Hospital Próprio, Pronto-Atendimento 24h e sem coparticipação."
         },
         plans: [
             {
                 id: 0,
-                name: "Infiniti",
+                name: "Infinite",
                 badge: "Novo Plano",
                 priceDesc: "Entre em Contato",
                 description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
@@ -354,9 +357,9 @@ export const locations: Record<string, LocationData> = {
                 title: "Hospitais Destaque",
                 icon: "hospital",
                 items: [
-                    { name: "Hospital Brasília (Lago Sul e Águas Claras)" },
-                    { name: "Hospital Daher" },
-                    { name: "Hospital Santa Lúcia" }
+                    { name: "Sírio Libanês" },
+                    { name: "Hospital Brasília Lago Sul" },
+                    { name: "Hospital Brasília Águas Claras" }
                 ]
             },
             {
@@ -391,14 +394,15 @@ export const locations: Record<string, LocationData> = {
             image: "/images/hero/vitoria_medsenior.webp",
             badge: "Sede MedSênior",
             differential: {
-                title: "Diferencial ES",
+                title: "Diferencial Vitória/Espírito Santo",
                 text: "Hospital Próprio MedSênior e Centros de Oncologia e Terapia da Dor."
-            }
+            },
+            description: "Aproveite a tabela exclusiva para <strong>novas contratações</strong> em Vitória. Conte com Hospital Próprio, Pronto-Atendimento 24h e sem coparticipação."
         },
         plans: [
             {
                 id: 0,
-                name: "Infiniti",
+                name: "Infinite",
                 badge: "Novo Plano",
                 priceDesc: "Entre em Contato",
                 description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
@@ -438,9 +442,8 @@ export const locations: Record<string, LocationData> = {
                 title: "Hospitais Destaque",
                 icon: "hospital",
                 items: [
-                    { name: "Vitória Apart Hospital" },
-                    { name: "Vila Velha Hospital" },
-                    { name: "Hospital Santa Rita" },
+                    { name: "Hospital Medsênior" },
+                    { name: "Hospital Evangélico" },
                     { name: "Santa Casa de Misericórdia" }
                 ]
             },
@@ -465,14 +468,15 @@ export const locations: Record<string, LocationData> = {
             image: "/images/hero/rio_de_janeiro_medsenior.webp",
             badge: "Expansão RJ",
             differential: {
-                title: "Diferencial RJ",
+                title: "Rio de Janeiro/RJ",
                 text: "Foco em desospitalização e ampla rede no Grande Rio e Niterói."
-            }
+            },
+            description: "Aproveite a tabela exclusiva para <strong>novas contratações</strong> em Rio de Janeiro. Conte com Hospital Próprio, Pronto-Atendimento 24h e sem coparticipação."
         },
         plans: [
             {
                 id: 0,
-                name: "Infiniti",
+                name: "Infinite",
                 badge: "Novo Plano",
                 priceDesc: "Entre em Contato",
                 description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
@@ -521,11 +525,11 @@ export const locations: Record<string, LocationData> = {
                 title: "Hospitais Destaque",
                 icon: "hospital",
                 items: [
-                    { name: "Senior Botafogo" },
-                    { name: "CHN Niterói" },
-                    { name: "Hospital Icaraí" },
-                    { name: "Casa de Saúde Santa Martha" },
-                    { name: "Hospital Pan Americano" }
+                    { name: "São Lucas Copacabana" },
+                    { name: "Hospital Vitória" },
+                    { name: "Casa de Saúde São José Humaitá" },
+                    { name: "Hospital Badim" },
+                    { name: "Hospital Unimed Rio" }
                 ]
             },
             {
@@ -560,14 +564,15 @@ export const locations: Record<string, LocationData> = {
             image: "/images/hero/porto_alegre_medsenior.webp",
             badge: "Tradição e Inovação",
             differential: {
-                title: "Diferencial RS",
-                text: "Unidade MedSênior Floresta e expansão de rede no Vale dos Sinos."
-            }
+                title: "Porto Alegre/Rio Grande do Sul",
+                text: "Conte com hospitais de referência e uma unidade própria com centro de oncologia."
+            },
+            description: "Aproveite a tabela exclusiva para novas contratações em Porto Alegre. Conte com o melhor em medicina preventiva tudo <strong>sem coparticipação</strong>."
         },
         plans: [
             {
                 id: 0,
-                name: "Infiniti",
+                name: "Infinite",
                 badge: "Novo Plano",
                 priceDesc: "Entre em Contato",
                 description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
@@ -654,14 +659,15 @@ export const locations: Record<string, LocationData> = {
             image: "/images/hero/recife_medsenior.webp",
             badge: "Inovação no Nordeste",
             differential: {
-                title: "Diferencial PE",
-                text: "Chegada do modelo 'Bem Envelhecer' com Telemedicina avançada."
-            }
+                title: "Recife/Pernambuco",
+                text: "Conte com hospitais de referência e uma unidade própria com centro de oncologia."
+            },
+            description: "Aproveite a tabela exclusiva para novas contratações em Recife. Conte com o melhor em medicina preventiva tudo <strong>sem coparticipação</strong>."
         },
         plans: [
             {
                 id: 0,
-                name: "Infiniti",
+                name: "Infinite",
                 badge: "Novo Plano",
                 priceDesc: "Entre em Contato",
                 description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",
@@ -739,14 +745,15 @@ export const locations: Record<string, LocationData> = {
             image: "/images/hero/campinas_medsenior.webp",
             badge: "Cuidado Integral",
             differential: {
-                title: "Diferencial Campinas",
-                text: "Unidade própria com ambulatório e gestão de cuidado preventiva."
-            }
+                title: "Diferencial Campinas/São Paulo",
+                text: "Conte com hospitais de referência e uma unidade própria com centro de oncologia."
+            },
+            description: "Aproveite a tabela exclusiva para <strong>novas contratações</strong> em Campinas. Conte com o melhor em medicina preventiva tudo <strong>sem coparticipação</strong>."
         },
         plans: [
             {
                 id: 0,
-                name: "Infiniti",
+                name: "Infinite",
                 badge: "Novo Plano",
                 priceDesc: "Entre em Contato",
                 description: "O novo plano mais premium da MedSênior. Entre em contato para saber mais informações sobre este plano exclusivo.",

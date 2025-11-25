@@ -82,7 +82,7 @@ export const LocationsGrid: React.FC<LocationsProps> = ({
           {/* Image Visualization */}
           <div className="hidden lg:block relative rounded-3xl overflow-hidden shadow-xl min-h-[500px]">
             <img
-              src="/images/locations/hospital-medsenior-vitoria.webp"
+              src="/images/network/hospital-medsenior-vitoria.webp"
               alt="Hospital MedSênior Vitória"
               className="absolute inset-0 w-full h-full object-cover"
             />
