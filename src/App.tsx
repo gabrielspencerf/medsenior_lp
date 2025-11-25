@@ -10,6 +10,8 @@ import { CookieConsent } from './components/CookieConsent';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsOfService } from './components/TermsOfService';
 import { Modal } from './components/Modal';
+import { CitySelectionModal } from './components/CitySelectionModal';
+import { getSelectedCity, setSelectedCity } from './utils/localStorage';
 
 
 // Lazy load non-critical sections for performance
@@ -24,15 +26,24 @@ const ENV_GTM_ID = import.meta.env.VITE_GTM_ID || '';
 const ENV_TYPEBOT_ID = import.meta.env.VITE_TYPEBOT_ID || 'medseniorteste';
 
 function App() {
-  // If VITE_LOCATION is set, lock to that location, otherwise default to Curitiba
-  const [currentCity, setCurrentCity] = useState(ENV_LOCATION || "Curitiba");
+  const [currentCity, setCurrentCity] = useState(() => {
+    const saved = getSelectedCity();
+    return ENV_LOCATION || saved || "Curitiba";
+  });
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+  const [showCityModal, setShowCityModal] = useState(false);
 
   const locationData = locations[currentCity] || locations["Curitiba"];
 
   // Determine if location switching is allowed
   const isLocationLocked = Boolean(ENV_LOCATION);
+
+  // Check if we should show city selection modal
+  useEffect(() => {
+    // Show modal on every page load when location is not locked
+    setShowCityModal(!isLocationLocked);
+  }, [isLocationLocked]);
 
   // Scroll to Hero section (#home) on initial load
   useEffect(() => {
@@ -87,12 +98,25 @@ function App() {
     }
   };
 
+  const handleCityModalSelect = (city: string) => {
+    setSelectedCity(city);
+    setCurrentCity(city);
+    setShowCityModal(false);
+  };
+
   return (
     <HelmetProvider>
       <div className="min-h-screen bg-white relative">
         <SEO locationData={locationData} />
         {/* Google Tag Manager */}
         {ENV_GTM_ID && <GoogleTagManager gtmId={ENV_GTM_ID} />}
+
+        {/* City Selection Modal */}
+        <CitySelectionModal
+          isOpen={showCityModal}
+          onCitySelect={handleCityModalSelect}
+          availableCities={Object.keys(locations)}
+        />
 
         <Header onNavigate={() => {
           const heroElement = document.getElementById('home');
