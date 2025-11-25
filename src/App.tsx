@@ -44,7 +44,7 @@ function App() {
             button: {
               backgroundColor: "#21c063",
               customIconSrc:
-                "/images/bubble-icon-whatsapp.webp",
+                "https://planosmelhoridade.com.br/images/bubble-icon-whatsapp.webp",
               size: "large",
             },
             chatWindow: { backgroundColor: "#FAF9F6" },
