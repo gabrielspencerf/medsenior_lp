@@ -45,18 +45,7 @@ function App() {
     setShowCityModal(!isLocationLocked);
   }, [isLocationLocked]);
 
-  // Scroll to Hero section (#home) on initial load
-  useEffect(() => {
-    const scrollToHero = () => {
-      const heroElement = document.getElementById('home');
-      if (heroElement) {
-        heroElement.scrollIntoView({ behavior: 'instant' });
-      }
-    };
 
-    // Small delay to ensure DOM is ready
-    setTimeout(scrollToHero, 50);
-  }, []);
 
   useEffect(() => {
     // Inicialização do Typebot com ID do ambiente
