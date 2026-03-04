@@ -1,7 +1,8 @@
 import React from 'react';
+import { MEDSENIOR_SEAL as SEAL_DATA } from '../config/siteIdentity';
 
 const BRASCARE_LOGO = "/images/branding/brascare-logotipo-horizontal.webp";
-const MEDSENIOR_SEAL = "/images/branding/medsenior-selo.png";
+const MEDSENIOR_SEAL_IMG = "/images/branding/medsenior-selo.png";
 
 interface HeaderProps {
   onNavigate?: () => void;
@@ -28,23 +29,33 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-row justify-between items-center gap-2">
 
-          {/* Left: BrasCare Logo */}
+          {/* Left: Parceiro BrasCare (somos revendedores autorizados) */}
           <div className="flex items-center justify-start flex-shrink-0">
-            <a href="#" onClick={handleLogoClick} className="cursor-pointer">
+            <a
+              href="#"
+              onClick={handleLogoClick}
+              className="cursor-pointer"
+              title="Revendedor autorizado"
+            >
               <img
                 src={BRASCARE_LOGO}
-                alt="BrasCare Corretora"
-                className="h-6 md:h-9 w-auto object-contain"
+                alt="Parceiro"
+                className="h-6 md:h-9 w-auto object-contain select-none"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
               />
             </a>
           </div>
 
-          {/* Center/Right: Official MedSênior Seal */}
+          {/* Center/Right: Selo MedSênior – Concessionária Autorizada BrasCare (dados do selo) */}
           <div className="flex items-center justify-end flex-shrink-0">
             <img
-              src={MEDSENIOR_SEAL}
-              alt="Concessionária Autorizada MedSênior"
-              className="h-8 md:h-10 w-auto object-contain"
+              src={MEDSENIOR_SEAL_IMG}
+              alt={SEAL_DATA.imageAlt}
+              className="h-8 md:h-10 w-auto object-contain select-none"
+              title={SEAL_DATA.imageAlt}
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
             />
           </div>
 

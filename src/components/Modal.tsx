@@ -36,12 +36,20 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }
 
     if (!isOpen) return null;
 
+    const titleId = title ? 'modal-title' : undefined;
+
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center">
+        <div
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={titleId}
+        >
             {/* Backdrop */}
             <div
-                className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fade-in"
+                className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-fadeIn"
                 onClick={onClose}
+                aria-hidden="true"
             />
 
             {/* Modal Content */}
@@ -49,16 +57,16 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-6 right-6 z-10 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900 transition-all"
+                    className="absolute top-6 right-6 z-10 min-w-[48px] min-h-[48px] flex items-center justify-center p-3 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900 transition-all"
                     aria-label="Fechar modal"
                 >
-                    <X className="w-6 h-6" />
+                    <X className="w-6 h-6" aria-hidden />
                 </button>
 
                 {/* Scrollable Content */}
                 <div className="overflow-y-auto max-h-[90vh] p-8 md:p-12 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-brand-primary [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:hover:bg-brand-accent">
                     {title && (
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 pr-12">
+                        <h2 id={titleId} className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 pr-12">
                             {title}
                         </h2>
                     )}

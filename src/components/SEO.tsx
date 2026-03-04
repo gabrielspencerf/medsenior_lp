@@ -11,7 +11,7 @@ export const SEO: React.FC<SEOProps> = ({ locationData }) => {
 
   const description = locationData.hero.description
     ? locationData.hero.description.replace(/<[^>]*>/g, "") // Strip HTML tags
-    : `Conheça o plano de saúde MedSênior em ${locationData.name}. Hospital próprio, carência zero e atendimento especializado para a terceira idade.`;
+    : `Conheça o plano de saúde MedSênior em ${locationData.name}. Hospital próprio, análise de carência conforme regras e atendimento especializado para 44+.`;
 
   // Base domain - ideally from env var, but defaulting to main domain
   const baseUrl = "https://www.medsenior.com.br";

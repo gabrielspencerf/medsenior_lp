@@ -8,25 +8,25 @@ interface NetworkProps {
 
 export const NetworkSection: React.FC<NetworkProps> = ({ locationData }) => {
     return (
-        <section className="py-20 bg-gray-50 border-t border-gray-200">
+        <section className="py-12 lg:py-14 bg-gray-50 border-t border-gray-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <h2 className="text-brand-primary font-bold uppercase tracking-wider text-sm mb-2">Estrutura de Ponta</h2>
-                    <h3 className="text-3xl font-bold text-brand-dark mb-4">Rede Credenciada em {locationData.name}</h3>
-                    <p className="text-gray-600 text-lg">
-                        {locationData.networkDescription || "Conte com hospitais de referência e uma unidade com centro de oncologia próprio Medsênior"}
+                <div className="text-center max-w-3xl mx-auto mb-8">
+                    <h2 className="text-brand-primary font-bold uppercase tracking-wider text-sm mb-1">Estrutura de Ponta</h2>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-brand-dark mb-2">Rede Credenciada em {locationData.name}</h3>
+                    <p className="text-gray-600 text-base">
+                        {locationData.networkDescription || "Hospitais de referência e unidade com centro de oncologia próprio."}
                     </p>
                 </div>
 
                 {locationData.network.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
                         {locationData.network.map((category, idx) => {
                             // Render "Unidade Própria" (own) differently
                             if (category.icon === 'own') {
                                 return (
-                                    <div key={idx} className="bg-brand-dark text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
+                                    <div key={idx} className="bg-brand-dark text-white p-5 lg:p-6 rounded-xl shadow-lg relative overflow-hidden">
                                         <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-brand-accent opacity-20 rounded-full blur-xl"></div>
-                                        <div className="flex items-center gap-3 mb-6 relative z-10">
+                                        <div className="flex items-center gap-3 mb-4 relative z-10">
                                             <div className="bg-white/10 p-3 rounded-xl text-brand-accent">
                                                 <Stethoscope className="w-6 h-6" />
                                             </div>
@@ -62,7 +62,9 @@ export const NetworkSection: React.FC<NetworkProps> = ({ locationData }) => {
                                                 <img
                                                     src={category.image}
                                                     alt={category.title}
-                                                    className="w-full h-full object-cover opacity-50 mix-blend-overlay"
+                                                    className="w-full h-full object-cover opacity-50 mix-blend-overlay select-none"
+                                                    draggable={false}
+                                                    onContextMenu={(e) => e.preventDefault()}
                                                 />
                                             </div>
                                         )}
@@ -74,8 +76,8 @@ export const NetworkSection: React.FC<NetworkProps> = ({ locationData }) => {
                             const Icon = category.icon === 'hospital' ? Building : Microscope;
 
                             return (
-                                <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                    <div className="flex items-center gap-3 mb-6">
+                                <div key={idx} className="bg-white p-5 lg:p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div className="flex items-center gap-3 mb-4">
                                         <div className="bg-brand-light p-3 rounded-xl text-brand-primary">
                                             <Icon className="w-6 h-6" />
                                         </div>

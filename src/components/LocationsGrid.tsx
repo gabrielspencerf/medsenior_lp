@@ -15,18 +15,18 @@ export const LocationsGrid: React.FC<LocationsProps> = ({
   isLocked = false,
 }) => {
   return (
-    <section className="py-20 bg-gray-50 text-brand-dark border-t border-gray-200">
+    <section className="py-12 lg:py-14 bg-gray-50 text-brand-dark border-t border-gray-200">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-brand-dark">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-brand-dark">
             Rede Própria e Credenciada
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Estrutura completa nas principais capitais do Brasil.
+          <p className="text-gray-600 text-base max-w-2xl mx-auto">
+            Estrutura completa nas principais capitais.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* List of Cities */}
           <div className="flex flex-col gap-4 justify-center">
             <div className="flex items-center justify-between mb-4 px-1">
@@ -80,14 +80,16 @@ export const LocationsGrid: React.FC<LocationsProps> = ({
           </div>
 
           {/* Image Visualization */}
-          <div className="hidden lg:block relative rounded-3xl overflow-hidden shadow-xl min-h-[500px]">
+          <div className="hidden lg:block relative rounded-2xl overflow-hidden shadow-xl min-h-[400px] select-none">
             <img
               src="/images/network/hospital-medsenior-vitoria.webp"
               alt="Hospital MedSênior Vitória"
               className="absolute inset-0 w-full h-full object-cover"
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
               <h3 className="text-2xl font-bold mb-2">Cuidado que vai além</h3>
               <p className="text-white/90">
                 Referência em medicina preventiva e envelhecimento saudável no

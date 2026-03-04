@@ -8,7 +8,7 @@
 
   <!-- SEO Meta Tags -->
   <meta name="description"
-    content="Planos de Saúde MedSênior - Central de Vendas Autorizada. Tabela exclusiva para 44+ sem coparticipação. Hospital Próprio, PA 24h e Carência Zero." />
+    content="Planos de Saúde MedSênior para 44+. Tabela exclusiva, Hospital Próprio, PA 24h. Cotação e intermediação comercial." />
   <meta name="keywords"
     content="plano de saúde, medsenior, 44+, melhor idade, hospital próprio, brascare, pronto atendimento 24h" />
   <meta name="author" content="BrasCare Life Saúde e Corretora" />
@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://www.medsenior.com.br" />
   <meta property="og:title" content="Med Sênior - Planos de Saúde 44+ | BrasCare" />
   <meta property="og:description"
-    content="Planos de Saúde exclusivos para 44+. Hospital Próprio, PA 24h e Carência Zero. Tabela especial para novas contratações." />
+    content="Planos de Saúde exclusivos para 44+. Hospital Próprio, PA 24h. Tabela especial para novas contratações. Cotação e intermediação." />
   <meta property="og:image" content="https://www.medsenior.com.br/og-image.jpg" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="MedSênior - BrasCare" />
@@ -29,21 +29,20 @@
   <meta property="twitter:url" content="https://www.medsenior.com.br" />
   <meta property="twitter:title" content="MedSênior - Planos de Saúde 44+ | BrasCare" />
   <meta property="twitter:description"
-    content="Planos de Saúde exclusivos para 44+. Hospital Próprio, PA 24h e Carência Zero." />
+    content="Planos de Saúde exclusivos para 44+. Hospital Próprio, PA 24h. Cotação e intermediação." />
   <meta property="twitter:image" content="https://www.medsenior.com.br/og-image.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="/fav.webp" />
 
-  <!-- Performance Optimizations -->
+  <!-- Performance: preconnect + preload LCP (imagem hero padrão Curitiba) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://flow.creativelane.com.br" crossorigin>
-  <link rel="dns-prefetch" href="https://aistudiocdn.com">
-  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.22/dist/web.js">
+  <link rel="preload" as="image" href="/images/hero/curitiba_medsenior.webp" type="image/webp">
 
-  <!-- Manrope Font -->
+  <!-- Manrope Font (display=swap evita FOIT) -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Schema.org JSON-LD -->
@@ -56,7 +55,7 @@
         "name": "BrasCare Life Saúde e Corretora",
         "url": "https://www.medsenior.com.br",
         "logo": "https://v1.planosmelhoridade.com.br/wp-content/uploads/2025/10/brascare-logotipo-horizontal.png",
-        "description": "Concessionária Autorizada MedSênior - Planos de Saúde para 44+",
+        "description": "Intermediação de planos de saúde MedSênior para 44+. Cotação comercial.",
         "sameAs": [],
         "contactPoint": {
           "@type": "ContactPoint",
@@ -98,16 +97,17 @@
   }
   </script>
 
-  <!-- Typebot Library -->
-  <script type="module">
-    import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2.22/dist/web.js'
-    window.Typebot = Typebot;
-  </script>
 </head>
 
 <body class="bg-white text-gray-900 selection:bg-brand-accent selection:text-brand-dark">
   <div id="root"></div>
   <script type="module" src="/src/index.tsx"></script>
+  <!-- Typebot (carrega após o app; o app escuta "typebot-ready" para iniciar o bubble) -->
+  <script type="module">
+    import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
+    window.Typebot = Typebot;
+    window.dispatchEvent(new Event('typebot-ready'));
+  </script>
 </body>
 
 </html>

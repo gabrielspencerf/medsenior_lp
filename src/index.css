@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom base styles */
+/* Custom base styles – acessibilidade 50+ e leitura (15px base) */
 @layer base {
+  html {
+    font-size: 15px;
+  }
   body {
-    @apply font-sans antialiased;
+    @apply font-sans antialiased text-base text-gray-800;
+  }
+  /* Impede arrastar e baixar imagens */
+  img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: auto;
   }
 }
 
@@ -45,4 +54,20 @@
 
 .animate-scaleIn {
   animation: scaleIn 0.3s ease-out;
+}
+
+/* Slide up (CookieConsent, Modal) */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s ease-out;
 }
